@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kish Estate | خانه‌ای برای زندگی، سرمایه‌ای برای آینده</title>
+<meta name="description" content="پلتفرم املاک لوکس کیش. خرید، اجاره و سرمایه‌گذاری در بهترین ویلاها، آپارتمان‌ها و پنت‌هاوس‌های جزیره کیش.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-950:#050a14;
+  --navy-900:#0a1120;
+  --navy-850:#0d1526;
+  --navy-800:#111b30;
+  --navy-700:#182541;
+  --navy-600:#22335a;
+  --ink-100:#e8ecf4;
+  --ink-300:#a9b4c9;
+  --ink-500:#6b7690;
+  --blue-400:#5fa8ff;
+  --blue-300:#8ec4ff;
+  --gold-400:#d8b979;
+  --line:rgba(255,255,255,0.08);
+  --glass:rgba(255,255,255,0.045);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+}
+body{
+  margin:0;
+  font-family:'Vazirmatn',sans-serif;
+  background:var(--navy-950);
+  color:var(--ink-100);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--blue-400);color:var(--navy-950);}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+input,select,textarea{font-family:inherit;}
+.container{max-width:1320px;margin:0 auto;padding:0 24px;}
+@media(max-width:640px){.container{padding:0 18px;}}
+
+/* subtle grain */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Navbar ---------- */
+header{position:fixed;top:0;inset-inline:0;z-index:100;transition:all .5s cubic-bezier(.16,1,.3,1);padding:26px 0;}
+header.scrolled{padding:12px 0;background:rgba(8,13,24,.72);backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--line);box-shadow:0 10px 40px -20px rgba(0,0,0,.6);}
+.navwrap{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-mark{width:38px;height:38px;flex:none;}
+.logo-text{font-size:19px;font-weight:800;letter-spacing:.2px;}
+.logo-text b{color:var(--blue-300);font-weight:800;}
+.navlinks{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0;}
+.navlinks a{position:relative;font-size:14.5px;color:var(--ink-300);padding:10px 14px;border-radius:100px;transition:color .3s;}
+.navlinks a:hover,.navlinks a.active{color:#fff;}
+.navlinks a::after{content:'';position:absolute;right:14px;left:14px;bottom:6px;height:1px;background:var(--blue-300);transform:scaleX(0);transform-origin:center;transition:transform .35s cubic-bezier(.16,1,.3,1);}
+.navlinks a:hover::after{transform:scaleX(1);}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.icon-btn{position:relative;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:100px;color:var(--ink-100);border:1px solid var(--line);transition:.3s;}
+.icon-btn:hover{border-color:var(--blue-400);background:var(--glass);}
+.badge{position:absolute;top:-4px;left:-4px;background:var(--blue-400);color:var(--navy-950);font-size:10px;font-weight:800;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:100px;background:linear-gradient(135deg,var(--blue-400),#3a7bd5);color:#04101f;font-weight:700;font-size:14px;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s;box-shadow:0 8px 24px -8px rgba(95,168,255,.5);}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(95,168,255,.65);}
+.cta.ghost{background:transparent;border:1px solid var(--line);color:#fff;box-shadow:none;}
+.cta.ghost:hover{border-color:var(--blue-400);background:var(--glass);transform:translateY(-2px);}
+.hamburger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:100px;align-items:center;justify-content:center;}
+@media(max-width:920px){
+  .navlinks,.nav-actions .cta{display:none;}
+  .hamburger{display:flex;}
+}
+.mobile-drawer{position:fixed;inset:0;z-index:200;background:var(--navy-950);opacity:0;pointer-events:none;transform:translateY(-8px);transition:all .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:26px 22px;}
+.mobile-drawer.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+.mobile-drawer .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+.mobile-drawer nav{display:flex;flex-direction:column;gap:6px;}
+.mobile-drawer nav a{font-size:30px;font-weight:700;padding:12px 4px;border-bottom:1px solid var(--line);opacity:0;transform:translateY(14px);animation:mfade .5s cubic-bezier(.16,1,.3,1) forwards;}
+.mobile-drawer.open nav a{animation-play-state:running;}
+@keyframes mfade{to{opacity:1;transform:translateY(0);}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:120px;padding-bottom:60px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);animation:heroDrift 22s ease-in-out infinite alternate;}
+@keyframes heroDrift{from{transform:scale(1.12) translate(0,0);}to{transform:scale(1.18) translate(-1.5%,-1%);}}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,10,20,.55) 0%,rgba(5,10,20,.72) 45%,var(--navy-950) 92%),linear-gradient(90deg,rgba(5,10,20,.85) 0%,rgba(5,10,20,.25) 55%);}
+.hero-content{position:relative;z-index:2;width:100%;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--blue-300);letter-spacing:.5px;border:1px solid var(--line);padding:8px 16px;border-radius:100px;background:var(--glass);opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .1s forwards;}
+.hero h1{font-size:clamp(38px,6.4vw,78px);line-height:1.12;font-weight:800;margin:26px 0 22px;max-width:820px;letter-spacing:-.5px;}
+.hero h1 span{display:block;opacity:0;transform:translateY(28px);animation:riseIn .9s cubic-bezier(.16,1,.3,1) forwards;}
+.hero h1 span:nth-child(1){animation-delay:.22s;}
+.hero h1 span:nth-child(2){background:linear-gradient(90deg,var(--blue-300),var(--gold-400));-webkit-background-clip:text;background-clip:text;color:transparent;animation-delay:.36s;}
+.hero p{max-width:560px;color:var(--ink-300);font-size:17.5px;line-height:1.9;opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .5s forwards;}
+.hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .64s forwards;}
+@keyframes riseIn{to{opacity:1;transform:translateY(0);}}
+.hero-stats{display:flex;gap:36px;margin-top:56px;opacity:0;animation:riseIn .8s cubic-bezier(.16,1,.3,1) .78s forwards;flex-wrap:wrap;}
+.hero-stats div{border-inline-start:1px solid var(--line);padding-inline-start:18px;}
+.hero-stats b{display:block;font-size:15px;color:#fff;font-weight:700;}
+.hero-stats span{font-size:12.5px;color:var(--ink-500);}
+
+/* floating architectural shape */
+.float-shape{position:absolute;z-index:1;border:1px solid rgba(143,196,255,.35);animation:floaty 8s ease-in-out infinite;}
+.float-shape.a{width:130px;height:130px;top:22%;left:6%;border-radius:18px;transform:rotate(14deg);animation-delay:0s;backdrop-filter:blur(2px);}
+.float-shape.b{width:70px;height:70px;bottom:18%;left:14%;border-radius:50%;animation-delay:1.4s;}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(14deg);}50%{transform:translateY(-18px) rotate(10deg);}}
+@media(max-width:920px){.float-shape{display:none;}}
+
+/* ---------- Search Panel ---------- */
+.search-panel{position:relative;z-index:3;margin-top:54px;background:linear-gradient(180deg,rgba(17,27,48,.85),rgba(13,21,38,.9));border:1px solid var(--line);border-radius:22px;padding:10px;backdrop-filter:blur(20px);box-shadow:0 30px 60px -30px rgba(0,0,0,.7);opacity:0;animation:riseIn .9s cubic-bezier(.16,1,.3,1) .9s forwards;max-width:980px;}
+.search-tabs{display:flex;gap:4px;padding:8px 8px 0;}
+.search-tabs button{padding:11px 22px;font-size:14px;font-weight:600;color:var(--ink-500);border-radius:12px 12px 0 0;transition:.25s;}
+.search-tabs button.active{color:#fff;background:var(--navy-800);}
+.search-fields{display:grid;grid-template-columns:repeat(5,1fr) auto;gap:10px;padding:16px;background:var(--navy-800);border-radius:16px;}
+@media(max-width:980px){.search-fields{grid-template-columns:1fr 1fr;}}
+@media(max-width:540px){.search-fields{grid-template-columns:1fr;}}
+.field label{display:block;font-size:11.5px;color:var(--ink-500);margin-bottom:6px;}
+.field select,.field input{width:100%;background:var(--navy-700);border:1px solid var(--line);border-radius:10px;color:#fff;padding:11px 12px;font-size:13.5px;outline:none;transition:border-color .25s;}
+.field select:focus,.field input:focus{border-color:var(--blue-400);}
+.search-fields .searchbtn{align-self:end;background:linear-gradient(135deg,var(--blue-400),#3a7bd5);color:#04101f;font-weight:700;border-radius:10px;padding:11px 20px;display:flex;align-items:center;gap:8px;white-space:nowrap;transition:transform .3s;}
+.search-fields .searchbtn:hover{transform:translateY(-2px);}
+
+/* ---------- section shared ---------- */
+section{position:relative;padding:110px 0;}
+@media(max-width:768px){section{padding:70px 0;}}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:52px;flex-wrap:wrap;}
+.sec-eyebrow{font-size:12.5px;letter-spacing:2px;color:var(--blue-300);font-weight:700;text-transform:uppercase;}
+.sec-title{font-size:clamp(28px,3.4vw,44px);font-weight:800;margin:12px 0 0;letter-spacing:-.4px;}
+.sec-sub{color:var(--ink-500);font-size:15.5px;max-width:440px;}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ---------- Property Cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+@media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.grid{grid-template-columns:1fr;}}
+.pcard{background:var(--navy-850);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .5s cubic-bezier(.16,1,.3,1),border-color .5s,box-shadow .5s;position:relative;}
+.pcard:hover{transform:translateY(-8px);border-color:rgba(143,196,255,.35);box-shadow:0 30px 50px -25px rgba(0,0,0,.6);}
+.pcard .imgwrap{position:relative;height:230px;overflow:hidden;}
+.pcard .imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1);}
+.pcard:hover .imgwrap img{transform:scale(1.09);}
+.pcard .imgwrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,10,20,.85));}
+.tag{position:absolute;top:14px;right:14px;background:rgba(8,14,26,.7);backdrop-filter:blur(6px);border:1px solid var(--line);font-size:11.5px;padding:6px 12px;border-radius:100px;z-index:2;}
+.ptype-tag{position:absolute;bottom:14px;right:14px;color:#fff;font-size:12.5px;font-weight:700;z-index:2;background:rgba(95,168,255,.18);border:1px solid rgba(143,196,255,.4);padding:5px 12px;border-radius:100px;}
+.favbtn{position:absolute;top:14px;left:14px;width:34px;height:34px;border-radius:50%;background:rgba(8,14,26,.7);backdrop-filter:blur(6px);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;z-index:2;transition:transform .3s;color:#fff;}
+.favbtn:hover{transform:scale(1.1);}
+.favbtn.active{color:#ff6b81;border-color:#ff6b81;}
+.favbtn svg{width:16px;height:16px;}
+.pcard .body{padding:20px;}
+.pcard .loc{font-size:12.5px;color:var(--ink-500);display:flex;align-items:center;gap:5px;margin-bottom:6px;}
+.pcard h3{font-size:18px;font-weight:700;margin:0 0 12px;}
+.pcard .meta{display:flex;gap:14px;font-size:12.5px;color:var(--ink-300);margin-bottom:16px;flex-wrap:wrap;}
+.pcard .meta span{display:flex;align-items:center;gap:5px;}
+.pcard .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;}
+.pcard .price{font-size:14.5px;font-weight:700;color:#fff;}
+.pcard .price b{color:var(--gold-400);font-size:11px;font-weight:500;display:block;margin-top:2px;}
+.pcard .actions{display:flex;gap:8px;align-items:center;}
+.smallbtn{font-size:12px;padding:8px 14px;border-radius:100px;border:1px solid var(--line);transition:.25s;}
+.smallbtn:hover{border-color:var(--blue-400);color:var(--blue-300);}
+.cmp-check{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink-500);}
+.cmp-check input{accent-color:var(--blue-400);}
+.grid-toolbar{display:flex;justify-content:center;margin-top:44px;}
+
+/* ---------- Filters bar ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;padding:18px;background:var(--navy-850);border:1px solid var(--line);border-radius:18px;}
+.filters select,.filters input{background:var(--navy-700);border:1px solid var(--line);color:#fff;padding:10px 14px;border-radius:10px;font-size:13px;outline:none;}
+.filters select:focus,.filters input:focus{border-color:var(--blue-400);}
+.viewtoggle{display:flex;gap:4px;margin-inline-start:auto;background:var(--navy-700);border-radius:10px;padding:4px;}
+.viewtoggle button{padding:7px 11px;border-radius:7px;color:var(--ink-500);}
+.viewtoggle button.active{background:var(--navy-600);color:#fff;}
+.grid.list-mode{grid-template-columns:1fr;}
+.grid.list-mode .pcard{display:grid;grid-template-columns:280px 1fr;}
+.grid.list-mode .imgwrap{height:100%;}
+@media(max-width:700px){.grid.list-mode .pcard{grid-template-columns:1fr;}}
+
+/* ---------- Locations ---------- */
+.loc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+@media(max-width:1024px){.loc-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:640px){.loc-grid{grid-template-columns:repeat(2,1fr);}}
+.loc-card{position:relative;border-radius:18px;overflow:hidden;height:340px;border:1px solid var(--line);cursor:pointer;}
+.loc-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1);}
+.loc-card:hover img{transform:scale(1.1);}
+.loc-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(5,10,20,.92));}
+.loc-info{position:absolute;bottom:0;inset-inline:0;padding:20px;z-index:2;}
+.loc-info h4{font-size:19px;font-weight:800;margin:0 0 6px;}
+.loc-info p{font-size:12.5px;color:var(--ink-300);margin:0 0 12px;line-height:1.7;max-height:0;opacity:0;overflow:hidden;transition:.4s;}
+.loc-card:hover .loc-info p{max-height:100px;opacity:1;}
+.loc-info a{font-size:12px;color:var(--blue-300);font-weight:600;display:inline-flex;align-items:center;gap:5px;}
+
+/* ---------- Investment ---------- */
+.inv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media(max-width:1024px){.inv-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.inv-grid{grid-template-columns:1fr;}}
+.inv-card{background:var(--navy-850);border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:.4s;}
+.inv-card:hover{border-color:rgba(143,196,255,.35);transform:translateY(-6px);}
+.inv-card .ic{width:46px;height:46px;border-radius:12px;background:rgba(95,168,255,.12);border:1px solid rgba(143,196,255,.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--blue-300);}
+.inv-card h4{font-size:16.5px;font-weight:700;margin:0 0 10px;}
+.inv-card p{font-size:13px;color:var(--ink-500);line-height:1.8;margin:0;}
+
+/* ---------- Why us ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+.why-item{background:var(--navy-900);padding:34px 26px;}
+.why-item .num{font-size:12px;color:var(--blue-300);font-weight:700;margin-bottom:14px;}
+.why-item h4{font-size:16px;font-weight:700;margin:0 0 10px;}
+.why-item p{font-size:12.5px;color:var(--ink-500);line-height:1.8;margin:0;}
+
+/* ---------- Agents ---------- */
+.agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.agent-grid{grid-template-columns:1fr;}}
+.agent-card{background:var(--navy-850);border:1px solid var(--line);border-radius:20px;padding:28px;text-align:center;transition:.4s;}
+.agent-card:hover{transform:translateY(-6px);border-color:rgba(143,196,255,.3);}
+.agent-photo{width:96px;height:96px;border-radius:50%;margin:0 auto 18px;overflow:hidden;border:2px solid var(--line);}
+.agent-photo img{width:100%;height:100%;object-fit:cover;}
+.agent-card h4{font-size:17px;font-weight:700;margin:0 0 4px;}
+.agent-card .spec{font-size:12.5px;color:var(--blue-300);margin-bottom:14px;}
+.agent-card .langs{font-size:11.5px;color:var(--ink-500);margin-bottom:20px;}
+.agent-actions{display:flex;justify-content:center;gap:8px;}
+.agent-actions a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.3s;}
+.agent-actions a:hover{border-color:var(--blue-400);color:var(--blue-300);}
+
+/* ---------- Map ---------- */
+.map-wrap{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(160deg,#0d1830,#0a1120);height:520px;}
+.map-svg{width:100%;height:100%;}
+.map-pin{cursor:pointer;transform-origin:center;transition:transform .3s;}
+.map-pin:hover, .map-pin.active{transform:scale(1.25);}
+.map-pin circle.pulse{animation:pulse 2.2s ease-out infinite;}
+@keyframes pulse{0%{opacity:.55;r:8;}100%{opacity:0;r:22;}}
+.map-popover{position:absolute;background:var(--navy-800);border:1px solid var(--line);border-radius:14px;padding:14px;width:220px;box-shadow:0 20px 40px -14px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:.25s;z-index:5;}
+.map-popover.show{opacity:1;pointer-events:auto;}
+.map-popover h5{margin:0 0 6px;font-size:14px;font-weight:700;}
+.map-popover p{margin:0 0 10px;font-size:12px;color:var(--ink-500);}
+
+/* ---------- CTA band ---------- */
+.ctaband{border-radius:28px;background:linear-gradient(135deg,var(--navy-700),var(--navy-900));border:1px solid var(--line);padding:64px 48px;text-align:center;position:relative;overflow:hidden;}
+.ctaband::before{content:'';position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(95,168,255,.22),transparent 70%);top:-150px;right:-100px;}
+.ctaband h3{font-size:clamp(24px,3vw,36px);font-weight:800;margin:0 0 14px;position:relative;}
+.ctaband p{color:var(--ink-300);margin:0 0 30px;position:relative;}
+.ctaband .row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+.contact-info-card{background:var(--navy-850);border:1px solid var(--line);border-radius:20px;padding:32px;}
+.contact-method{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);}
+.contact-method:last-child{border-bottom:none;}
+.contact-method .ic{width:42px;height:42px;border-radius:12px;background:rgba(95,168,255,.12);display:flex;align-items:center;justify-content:center;color:var(--blue-300);flex:none;}
+.contact-method b{display:block;font-size:14px;}
+.contact-method span{font-size:12px;color:var(--ink-500);}
+.form-card{background:var(--navy-850);border:1px solid var(--line);border-radius:20px;padding:32px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+@media(max-width:560px){.form-row{grid-template-columns:1fr;}}
+.form-group label{display:block;font-size:12.5px;color:var(--ink-300);margin-bottom:7px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--navy-700);border:1px solid var(--line);border-radius:10px;color:#fff;padding:12px 14px;font-size:13.5px;outline:none;transition:border-color .25s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue-400);}
+.form-group.err input,.form-group.err select,.form-group.err textarea{border-color:#ff6b81;}
+.errtxt{font-size:11px;color:#ff6b81;margin-top:5px;display:none;}
+.form-group.err .errtxt{display:block;}
+.form-group textarea{resize:vertical;min-height:100px;}
+.submitbtn{width:100%;margin-top:6px;}
+.success-box{display:none;text-align:center;padding:40px 10px;}
+.success-box.show{display:block;}
+.success-box .ic{width:64px;height:64px;border-radius:50%;background:rgba(95,168,255,.15);border:1px solid rgba(143,196,255,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:var(--blue-300);}
+.form-card form.hide{display:none;}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);padding:64px 0 30px;background:var(--navy-900);}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;margin-bottom:50px;}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr 1fr;}}
+.foot-grid h5{font-size:13px;color:#fff;margin:0 0 16px;}
+.foot-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+.foot-grid ul a{font-size:13px;color:var(--ink-500);transition:.25s;}
+.foot-grid ul a:hover{color:var(--blue-300);}
+.foot-social{display:flex;gap:10px;margin-top:16px;}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-500);flex-wrap:wrap;gap:10px;}
+
+/* ---------- Modal (property detail) ---------- */
+.modal-overlay{position:fixed;inset:0;background:rgba(4,8,16,.78);backdrop-filter:blur(6px);z-index:300;opacity:0;pointer-events:none;transition:opacity .4s;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 16px;}
+.modal-overlay.open{opacity:1;pointer-events:auto;}
+.modal-box{background:var(--navy-900);border:1px solid var(--line);border-radius:24px;max-width:980px;width:100%;overflow:hidden;transform:translateY(24px) scale(.98);transition:transform .45s cubic-bezier(.16,1,.3,1);margin-bottom:40px;}
+.modal-overlay.open .modal-box{transform:translateY(0) scale(1);}
+.modal-close{position:absolute;top:18px;left:18px;width:40px;height:40px;border-radius:50%;background:rgba(4,8,16,.6);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;z-index:6;}
+.gallery{position:relative;height:420px;background:#000;}
+@media(max-width:640px){.gallery{height:280px;}}
+.gallery img{width:100%;height:100%;object-fit:cover;}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(4,8,16,.6);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;z-index:5;}
+.gallery-nav.prev{right:16px;}
+.gallery-nav.next{left:16px;}
+.gallery-counter{position:absolute;bottom:16px;left:16px;background:rgba(4,8,16,.65);padding:5px 12px;border-radius:100px;font-size:12px;z-index:5;}
+.modal-body{padding:34px;}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:26px;}
+.modal-head h2{font-size:26px;font-weight:800;margin:0 0 8px;}
+.modal-head .loc{color:var(--ink-500);font-size:13.5px;display:flex;gap:6px;align-items:center;}
+.modal-head .price{font-size:22px;font-weight:800;color:var(--gold-400);text-align:left;}
+.stat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:30px;}
+@media(max-width:700px){.stat-grid{grid-template-columns:repeat(3,1fr);}}
+.stat-item{background:var(--navy-850);padding:16px 8px;text-align:center;}
+.stat-item b{display:block;font-size:15px;}
+.stat-item span{font-size:10.5px;color:var(--ink-500);}
+.modal-body h3.sub{font-size:16px;font-weight:700;margin:0 0 14px;}
+.modal-body p.desc{color:var(--ink-300);font-size:14px;line-height:1.9;margin-bottom:30px;}
+.amenity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:30px;}
+@media(max-width:640px){.amenity-grid{grid-template-columns:repeat(2,1fr);}}
+.amenity{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-300);background:var(--navy-850);border:1px solid var(--line);border-radius:10px;padding:11px 12px;}
+.modal-agent{display:flex;align-items:center;gap:16px;background:var(--navy-850);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:30px;}
+.modal-agent img{width:56px;height:56px;border-radius:50%;object-fit:cover;}
+.modal-agent .info{flex:1;}
+.modal-agent .info b{display:block;font-size:14.5px;}
+.modal-agent .info span{font-size:12px;color:var(--ink-500);}
+.share-row{display:flex;gap:8px;margin-bottom:30px;flex-wrap:wrap;}
+.share-row button{display:flex;align-items:center;gap:7px;font-size:12.5px;border:1px solid var(--line);padding:9px 15px;border-radius:100px;transition:.25s;}
+.share-row button:hover{border-color:var(--blue-400);color:var(--blue-300);}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy-800);border:1px solid var(--blue-400);padding:12px 22px;border-radius:100px;font-size:13px;z-index:500;opacity:0;pointer-events:none;transition:.35s;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ---------- Drawer (favorites/compare) ---------- */
+.drawer-overlay{position:fixed;inset:0;background:rgba(4,8,16,.6);backdrop-filter:blur(4px);z-index:250;opacity:0;pointer-events:none;transition:opacity .35s;}
+.drawer-overlay.open{opacity:1;pointer-events:auto;}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(420px,92vw);background:var(--navy-900);border-inline-end:1px solid var(--line);z-index:251;transform:translateX(-100%);transition:transform .5s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:26px;overflow-y:auto;}
+.drawer.open{transform:translateX(0);}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;}
+.drawer-head h3{font-size:19px;font-weight:800;margin:0;}
+.mini-card{display:flex;gap:12px;background:var(--navy-850);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px;}
+.mini-card img{width:76px;height:64px;border-radius:9px;object-fit:cover;flex:none;}
+.mini-card .info{flex:1;min-width:0;}
+.mini-card h5{font-size:13.5px;margin:0 0 4px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mini-card .price{font-size:12px;color:var(--gold-400);}
+.mini-card .rm{color:var(--ink-500);}
+.empty-state{text-align:center;padding:60px 10px;color:var(--ink-500);font-size:13.5px;}
+.cmp-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:10px;}
+.cmp-table th,.cmp-table td{padding:9px 6px;text-align:right;border-bottom:1px solid var(--line);}
+.cmp-table th{color:var(--ink-500);font-weight:600;width:32%;}
+
+/* scroll top */
+.scrolltop{position:fixed;bottom:24px;right:24px;width:46px;height:46px;border-radius:50%;background:var(--navy-800);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;z-index:80;opacity:0;pointer-events:none;transition:.35s;}
+.scrolltop.show{opacity:1;pointer-events:auto;}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+:focus-visible{outline:2px solid var(--blue-400);outline-offset:3px;}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header id="siteHeader">
+  <div class="container navwrap">
+    <a href="#home" class="logo" aria-label="Kish Estate - خانه">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 27L20 6L36 27" stroke="#5fa8ff" stroke-width="2"/>
+        <path d="M9 27V16.5L20 12L31 16.5V27" stroke="#e8ecf4" stroke-width="1.6"/>
+        <line x1="2" y1="31" x2="38" y2="31" stroke="#d8b979" stroke-width="1.6"/>
+        <circle cx="20" cy="20" r="2" fill="#5fa8ff"/>
+      </svg>
+      <span class="logo-text">Kish <b>Estate</b></span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="#home" class="nav-link active" data-view="home">خانه</a></li>
+      <li><a href="#properties" class="nav-link" data-view="properties">املاک</a></li>
+      <li><a href="#properties" class="nav-link" data-view="properties" data-filter="buy">خرید</a></li>
+      <li><a href="#properties" class="nav-link" data-view="properties" data-filter="rent">اجاره</a></li>
+      <li><a href="#investment">سرمایه‌گذاری</a></li>
+      <li><a href="#about">درباره ما</a></li>
+      <li><a href="#agents">مشاوران</a></li>
+      <li><a href="#contact">تماس با ما</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="openFav" aria-label="علاقه‌مندی‌ها">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <span class="badge" id="favCount">0</span>
+      </button>
+      <button class="icon-btn" id="openCompare" aria-label="مقایسه">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-4"/></svg>
+        <span class="badge" id="cmpCount">0</span>
+      </button>
+      <a href="#contact" class="cta">درخواست مشاوره</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="منو">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="top">
+    <span class="logo-text">Kish <b>Estate</b></span>
+    <button class="icon-btn" id="closeDrawerBtn" aria-label="بستن منو">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="#home" class="mnav">خانه</a>
+    <a href="#properties" class="mnav">املاک</a>
+    <a href="#investment" class="mnav">سرمایه‌گذاری</a>
+    <a href="#about" class="mnav">درباره ما</a>
+    <a href="#agents" class="mnav">مشاوران</a>
+    <a href="#contact" class="mnav">تماس با ما</a>
+  </nav>
+  <a href="#contact" class="cta" style="margin-top:auto;justify-content:center;" id="mDrawerCta">درخواست مشاوره</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1800&q=80" alt="">
+  </div>
+  <div class="float-shape a" aria-hidden="true"></div>
+  <div class="float-shape b" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <span class="eyebrow">Kish Estate · املاک لوکس جزیره کیش</span>
+    <h1>
+      <span>خانه‌ی رویایی شما در کیش،</span>
+      <span>اینجاست.</span>
+    </h1>
+    <p>از آپارتمان‌های مدرن تا ویلاهای ساحلی؛ بهترین فرصت‌های خرید، اجاره و سرمایه‌گذاری در کیش را کشف کنید.</p>
+    <div class="hero-ctas">
+      <a href="#properties" class="cta">مشاهده املاک</a>
+      <a href="#contact" class="cta ghost">درخواست مشاوره</a>
+    </div>
+    <div class="hero-stats" aria-hidden="true">
+      <div><b>منتخب</b><span>املاک ویژه کیش</span></div>
+      <div><b>شفاف</b><span>اطلاعات کامل هر ملک</span></div>
+      <div><b>محلی</b><span>مشاوران آشنا به بازار کیش</span></div>
+    </div>
+
+    <div class="search-panel">
+      <div class="search-tabs" role="tablist">
+        <button class="active" data-tx="buy">خرید</button>
+        <button data-tx="rent">اجاره</button>
+        <button data-tx="invest">سرمایه‌گذاری</button>
+      </div>
+      <div class="search-fields">
+        <div class="field">
+          <label for="s-region">منطقه</label>
+          <select id="s-region">
+            <option value="">همه مناطق</option>
+            <option>مرجان</option><option>دامون</option><option>صدف</option><option>نوبنیاد</option><option>صفین</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-type">نوع ملک</label>
+          <select id="s-type">
+            <option value="">همه انواع</option>
+            <option>آپارتمان</option><option>ویلا</option><option>پنت‌هاوس</option><option>زمین</option><option>ملک تجاری</option><option>دفتر</option><option>هتل / سوئیت</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-price">محدوده قیمت</label>
+          <select id="s-price">
+            <option value="">نامحدود</option>
+            <option>تا ۵ میلیارد تومان</option><option>۵ تا ۱۵ میلیارد</option><option>۱۵ تا ۳۰ میلیارد</option><option>بیش از ۳۰ میلیارد</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-area">متراژ</label>
+          <input id="s-area" type="text" placeholder="مثلاً ۱۵۰ متر">
+        </div>
+        <div class="field">
+          <label for="s-bed">تعداد خواب</label>
+          <select id="s-bed">
+            <option value="">هر تعداد</option>
+            <option>۱</option><option>۲</option><option>۳</option><option>۴+</option>
+          </select>
+        </div>
+        <button class="searchbtn" id="heroSearchBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          جستجوی ملک
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED / LISTING ================= -->
+<section id="properties">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-eyebrow">Kish Estate</span>
+        <h2 class="sec-title">منتخب‌های کیش</h2>
+      </div>
+      <p class="sec-sub">املاکی که ارزش دیدن دارند. فیلتر کنید و ملک ایده‌آل خود را پیدا کنید.</p>
+    </div>
+
+    <div class="filters reveal">
+      <select id="f-type"><option value="">نوع ملک</option></select>
+      <select id="f-tx"><option value="">خرید / اجاره</option><option value="buy">خرید</option><option value="rent">اجاره</option></select>
+      <select id="f-loc"><option value="">منطقه</option></select>
+      <select id="f-bed"><option value="">تعداد خواب</option><option value="1">۱ خواب</option><option value="2">۲ خواب</option><option value="3">۳ خواب</option><option value="4">۴+ خواب</option></select>
+      <select id="f-sort">
+        <option value="featured">مرتب‌سازی: پیشنهادی</option>
+        <option value="price-asc">قیمت: کم به زیاد</option>
+        <option value="price-desc">قیمت: زیاد به کم</option>
+        <option value="area-desc">بیشترین متراژ</option>
+      </select>
+      <div class="viewtoggle">
+        <button class="active" id="viewGrid" aria-label="نمایش شبکه‌ای">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </button>
+        <button id="viewList" aria-label="نمایش لیستی">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid reveal" id="propertyGrid"></div>
+    <p id="noResults" class="empty-state" style="display:none;">ملکی با این فیلترها یافت نشد. فیلترها را تغییر دهید.</p>
+  </div>
+</section>
+
+<!-- ================= LOCATIONS ================= -->
+<section id="locations" style="background:var(--navy-900);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-eyebrow">جزیره کیش</span>
+        <h2 class="sec-title">مناطق محبوب کیش</h2>
+      </div>
+      <p class="sec-sub">هر منطقه از کیش شخصیت خودش را دارد؛ منطقه‌ای را که با سبک زندگی شما هماهنگ است انتخاب کنید.</p>
+    </div>
+    <div class="loc-grid reveal" id="locGrid"></div>
+  </div>
+</section>
+
+<!-- ================= INVESTMENT ================= -->
+<section id="investment">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-eyebrow">سرمایه‌گذاری هوشمند</span>
+        <h2 class="sec-title">فرصت‌های سرمایه‌گذاری در کیش</h2>
+      </div>
+      <p class="sec-sub">مسیرهای مختلف ورود به بازار املاک کیش، متناسب با هدف و بودجه شما.</p>
+    </div>
+    <div class="inv-grid reveal">
+      <div class="inv-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 6h7v7"/></svg></div>
+        <h4>خرید برای سرمایه‌گذاری</h4>
+        <p>خرید املاک با پتانسیل افزایش ارزش در بازه میان و بلندمدت.</p>
+      </div>
+      <div class="inv-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h4>املاک تجاری</h4>
+        <p>فضاهای تجاری و اداری در مناطق پرتردد و گردشگرپذیر کیش.</p>
+      </div>
+      <div class="inv-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-8h6v8"/></svg></div>
+        <h4>واحدهای مناسب اجاره</h4>
+        <p>ملک‌هایی با موقعیت و امکاناتی که برای اجاره کوتاه یا بلندمدت جذاب‌اند.</p>
+      </div>
+      <div class="inv-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20V10M18 20V4M6 20v-6"/></svg></div>
+        <h4>فرصت‌های نوسازی</h4>
+        <p>املاکی با قابلیت بازسازی و افزایش ارزش از طریق نوسازی.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="#contact" class="cta">دریافت مشاوره سرمایه‌گذاری</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US / ABOUT ================= -->
+<section id="about" style="background:var(--navy-900);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-eyebrow">درباره Kish Estate</span>
+        <h2 class="sec-title">چرا Kish Estate؟</h2>
+      </div>
+      <p class="sec-sub">ما تلاش می‌کنیم فرآیند پیدا کردن، ارزیابی و تصمیم‌گیری برای ملک را شفاف و مطمئن کنیم.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <div class="num">۰۱</div>
+        <h4>اعتماد</h4>
+        <p>اطلاعات شفاف و کامل درباره هر ملک، بدون ابهام و تعارف.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">۰۲</div>
+        <h4>شناخت بازار کیش</h4>
+        <p>آشنایی دقیق با مناطق، روند قیمت‌ها و ویژگی‌های هر بخش از جزیره.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">۰۳</div>
+        <h4>تجربه مشتری</h4>
+        <p>همراهی از جستجوی اولیه تا نهایی‌شدن معامله، مرحله به مرحله.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">۰۴</div>
+        <h4>انتخاب آگاهانه</h4>
+        <p>ابزارهایی مثل مقایسه ملک و فیلتر دقیق برای تصمیم بهتر.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AGENTS ================= -->
+<section id="agents">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-eyebrow">تیم ما</span>
+        <h2 class="sec-title">مشاوران ما</h2>
+      </div>
+      <p class="sec-sub">مشاورانی که همراه شما در مسیر خرید، اجاره یا سرمایه‌گذاری خواهند بود.</p>
+    </div>
+    <div class="agent-grid reveal" id="agentGrid"></div>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section id="map-section" style="background:var(--navy-900);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-eyebrow">موقعیت مکانی</span>
+        <h2 class="sec-title">نقشه املاک کیش</h2>
+      </div>
+      <p class="sec-sub">روی نشانگرها کلیک کنید تا منطقه و املاک مرتبط را ببینید.</p>
+    </div>
+    <div class="map-wrap reveal" id="mapWrap"></div>
+  </div>
+</section>
+
+<!-- ================= CTA BAND ================= -->
+<section>
+  <div class="container">
+    <div class="ctaband reveal">
+      <h3>آماده‌اید خانه رویایی‌تان را در کیش پیدا کنید؟</h3>
+      <p>همین حالا با مشاوران ما صحبت کنید یا املاک منتخب را مرور کنید.</p>
+      <div class="row">
+        <a href="#properties" class="cta">مشاهده املاک</a>
+        <a href="#contact" class="cta ghost">درخواست مشاوره</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-eyebrow">در تماس باشید</span>
+        <h2 class="sec-title">تماس با ما</h2>
+      </div>
+      <p class="sec-sub">فرم زیر را پر کنید یا مستقیم با ما در ارتباط باشید.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-info-card">
+        <div class="contact-method">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.1z"/></svg></div>
+          <div><b>تماس تلفنی</b><span dir="ltr">+98 912 000 0000</span></div>
+        </div>
+        <div class="contact-method">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4A8.4 8.4 0 0 1 3.6 12 8.4 8.4 0 0 1 12 3.6 8.4 8.4 0 0 1 21 11.5z"/><path d="M8 10.5s.5 3 4 3"/></svg></div>
+          <div><b>WhatsApp</b><span>گفتگوی مستقیم با تیم پشتیبانی</span></div>
+        </div>
+        <div class="contact-method">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
+          <div><b>Telegram</b><span>@kishestate</span></div>
+        </div>
+        <div class="contact-method">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+          <div><b>Instagram</b><span>@kishestate</span></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group" id="g-name">
+              <label for="c-name">نام</label>
+              <input id="c-name" type="text" placeholder="نام و نام خانوادگی">
+              <span class="errtxt">لطفاً نام خود را وارد کنید.</span>
+            </div>
+            <div class="form-group" id="g-phone">
+              <label for="c-phone">شماره تماس</label>
+              <input id="c-phone" type="tel" placeholder="09xxxxxxxxx" dir="ltr">
+              <span class="errtxt">شماره تماس معتبر وارد کنید.</span>
+            </div>
+          </div>
+          <div class="form-group" id="g-type" style="margin-bottom:14px;">
+            <label for="c-type">نوع درخواست</label>
+            <select id="c-type">
+              <option value="">انتخاب کنید</option>
+              <option>خرید ملک</option><option>اجاره</option><option>سرمایه‌گذاری</option><option>فروش ملک</option><option>مشاوره</option>
+            </select>
+            <span class="errtxt">لطفاً نوع درخواست را انتخاب کنید.</span>
+          </div>
+          <div class="form-group" id="g-msg" style="margin-bottom:16px;">
+            <label for="c-msg">توضیحات</label>
+            <textarea id="c-msg" placeholder="کمی درباره نیاز خود توضیح دهید..."></textarea>
+            <span class="errtxt">لطفاً توضیحات را کامل کنید.</span>
+          </div>
+          <button type="submit" class="cta submitbtn">ارسال درخواست</button>
+        </form>
+        <div class="success-box" id="successBox">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3 class="sub" style="margin-bottom:8px;">درخواست شما ثبت شد</h3>
+          <p style="color:var(--ink-500);font-size:13px;">تیم Kish Estate در اسرع وقت با شما تماس خواهد گرفت.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <span class="logo-text">Kish <b>Estate</b></span>
+        <p style="color:var(--ink-500);font-size:13px;line-height:1.9;margin:16px 0 0;max-width:280px;">خانه‌ای برای زندگی، سرمایه‌ای برای آینده. پلتفرم املاک لوکس جزیره کیش.</p>
+        <div class="foot-social">
+          <a href="#" class="icon-btn" aria-label="اینستاگرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" class="icon-btn" aria-label="واتساپ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4A8.4 8.4 0 0 1 3.6 12 8.4 8.4 0 0 1 12 3.6 8.4 8.4 0 0 1 21 11.5z"/></svg></a>
+          <a href="#" class="icon-btn" aria-label="تلگرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>دسترسی سریع</h5>
+        <ul><li><a href="#properties">املاک</a></li><li><a href="#properties" data-filter="buy" class="nav-link" data-view="properties">خرید</a></li><li><a href="#properties" data-filter="rent" class="nav-link" data-view="properties">اجاره</a></li><li><a href="#investment">سرمایه‌گذاری</a></li></ul>
+      </div>
+      <div>
+        <h5>شرکت</h5>
+        <ul><li><a href="#agents">مشاوران</a></li><li><a href="#about">درباره ما</a></li><li><a href="#contact">تماس</a></li></ul>
+      </div>
+      <div>
+        <h5>تماس</h5>
+        <ul><li><span style="color:var(--ink-500);font-size:13px;">کیش، ایران</span></li><li><a href="#contact" dir="ltr">+98 912 000 0000</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Kish Estate — این یک نسخه دموی نمایشی است.</span>
+      <span>ساخته‌شده برای معرفی به آژانس‌های املاک</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= PROPERTY DETAIL MODAL ================= -->
+<div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<!-- ================= FAVORITES DRAWER ================= -->
+<div class="drawer-overlay" id="favOverlay"></div>
+<div class="drawer" id="favDrawer" role="dialog" aria-label="علاقه‌مندی‌ها">
+  <div class="drawer-head">
+    <h3>علاقه‌مندی‌ها</h3>
+    <button class="icon-btn" id="closeFav" aria-label="بستن"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div id="favList"></div>
+</div>
+
+<!-- ================= COMPARE DRAWER ================= -->
+<div class="drawer-overlay" id="cmpOverlay"></div>
+<div class="drawer" id="cmpDrawer" role="dialog" aria-label="مقایسه املاک">
+  <div class="drawer-head">
+    <h3>مقایسه املاک <span style="color:var(--ink-500);font-size:12px;">(حداکثر ۳ ملک)</span></h3>
+    <button class="icon-btn" id="closeCmp" aria-label="بستن"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div id="cmpList"></div>
+</div>
+
+<button class="scrolltop" id="scrollTopBtn" aria-label="بازگشت به بالا">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================= DATA ================= */
+const IMG = {
+  marjan1:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+  marjan2:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+  damoon1:"https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+  damoon2:"https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+  novin1:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+  novin2:"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80",
+  sadaf1:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+  safin1:"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80",
+  villa1:"https://images.unsplash.com/photo-1613977257592-4a9a32f9734e?auto=format&fit=crop&w=1200&q=80",
+  office1:"https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+  land1:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+  interior1:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+  interior2:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+  agent1:"https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=300&q=80",
+  agent2:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80",
+  agent3:"https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80",
+};
+
+const LOCATIONS = [
+  {id:"marjan",name:"مرجان",img:IMG.marjan1,desc:"منطقه‌ای ساحلی و آرام با دسترسی راحت به مراکز تفریحی کیش."},
+  {id:"damoon",name:"دامون",img:IMG.damoon1,desc:"از مناطق برتر کیش با ویلاهای لوکس و چشم‌انداز دریا."},
+  {id:"sadaf",name:"صدف",img:IMG.sadaf1,desc:"منطقه‌ای پرتردد با دسترسی به مراکز خرید و امکانات شهری."},
+  {id:"novbonyad",name:"نوبنیاد",img:IMG.novin1,desc:"ساختمان‌های نوساز و پروژه‌های مدرن مسکونی و تجاری."},
+  {id:"safin",name:"صفین",img:IMG.safin1,desc:"محله‌ای آرام، مناسب برای زندگی خانوادگی در کیش."},
+];
+
+const AMEN_LABELS = {pool:"استخر",elevator:"آسانسور",parking:"پارکینگ",security:"نگهبانی",gym:"سالن ورزشی",balcony:"بالکن",seaview:"منظره دریا",smart:"سیستم هوشمند"};
+
+const PROPERTIES = [
+  {id:1,title:"Modern Sea View Residence",slug:"modern-sea-view-residence",type:"آپارتمان",tx:"buy",location:"مرجان",price:12500000000,priceLabel:"۱۲٬۵۰۰٬۰۰۰٬۰۰۰ تومان",area:185,bedrooms:3,bathrooms:2,parking:1,floor:4,year:1401,featured:true,
+    images:[IMG.marjan1,IMG.interior1,IMG.interior2],
+    desc:"آپارتمانی مدرن با چشم‌انداز باز به دریا در منطقه مرجان. طراحی داخلی امروزی، نورگیری عالی و دسترسی آسان به سواحل و مراکز تفریحی از ویژگی‌های این واحد است.",
+    amenities:["pool","elevator","parking","security","seaview","smart"],agent:0},
+  {id:2,title:"Ocean Pearl Villa",slug:"ocean-pearl-villa",type:"ویلا",tx:"buy",location:"دامون",price:38000000000,priceLabel:"۳۸٬۰۰۰٬۰۰۰٬۰۰۰ تومان",area:380,bedrooms:4,bathrooms:3,parking:2,floor:2,year:1400,featured:true,
+    images:[IMG.damoon1,IMG.villa1,IMG.interior1],
+    desc:"ویلایی خصوصی در دامون با حیاط اختصاصی، استخر روباز و دسترسی مستقیم به ساحل. فضایی مناسب برای زندگی خانوادگی در آرامش کامل.",
+    amenities:["pool","parking","security","seaview","balcony"],agent:1},
+  {id:3,title:"Royal Marina Penthouse",slug:"royal-marina-penthouse",type:"پنت‌هاوس",tx:"buy",location:"نوبنیاد",price:24000000000,priceLabel:"۲۴٬۰۰۰٬۰۰۰٬۰۰۰ تومان",area:270,bedrooms:4,bathrooms:3,parking:2,floor:12,year:1402,featured:true,
+    images:[IMG.novin1,IMG.interior2,IMG.novin2],
+    desc:"پنت‌هاوسی در بالاترین طبقه یکی از برج‌های نوبنیاد با تراس اختصاصی و منظره ۳۶۰ درجه از جزیره.",
+    amenities:["pool","elevator","parking","security","gym","smart","seaview"],agent:2},
+  {id:4,title:"Coral Breeze Apartment",slug:"coral-breeze-apartment",type:"آپارتمان",tx:"rent",location:"صدف",price:85000000,priceLabel:"۸۵٬۰۰۰٬۰۰۰ تومان / ماه",area:120,bedrooms:2,bathrooms:1,parking:1,floor:3,year:1399,featured:false,
+    images:[IMG.sadaf1,IMG.interior1],
+    desc:"واحدی نقلی و دنج در منطقه صدف، مناسب اجاره میان‌مدت با دسترسی عالی به مراکز خرید.",
+    amenities:["elevator","parking","security","balcony"],agent:0},
+  {id:5,title:"Palm Horizon Villa",slug:"palm-horizon-villa",type:"ویلا",tx:"rent",location:"صفین",price:150000000,priceLabel:"۱۵۰٬۰۰۰٬۰۰۰ تومان / ماه",area:310,bedrooms:4,bathrooms:3,parking:2,floor:1,year:1398,featured:false,
+    images:[IMG.safin1,IMG.villa1],
+    desc:"ویلایی آرام در صفین با حیاط بزرگ، مناسب اقامت‌های خانوادگی و اجاره فصلی.",
+    amenities:["pool","parking","balcony"],agent:1},
+  {id:6,title:"Nova Business Tower Office",slug:"nova-business-tower-office",type:"دفتر",tx:"buy",location:"نوبنیاد",price:9800000000,priceLabel:"۹٬۸۰۰٬۰۰۰٬۰۰۰ تومان",area:95,bedrooms:0,bathrooms:1,parking:1,floor:6,year:1402,featured:false,
+    images:[IMG.office1,IMG.novin2],
+    desc:"واحد اداری در برج تجاری نوبنیاد، مناسب دفاتر کسب‌وکارهای کوچک تا متوسط.",
+    amenities:["elevator","parking","security","smart"],agent:2},
+  {id:7,title:"Marjan Commercial Unit",slug:"marjan-commercial-unit",type:"ملک تجاری",tx:"buy",location:"مرجان",price:16500000000,priceLabel:"۱۶٬۵۰۰٬۰۰۰٬۰۰۰ تومان",area:140,bedrooms:0,bathrooms:1,parking:1,floor:0,year:1400,featured:false,
+    images:[IMG.marjan2,IMG.office1],
+    desc:"مغازه تجاری در یکی از پرتردد‌ترین گذرهای منطقه مرجان با نمای شیشه‌ای کامل.",
+    amenities:["security","smart"],agent:0},
+  {id:8,title:"Damoon Beachfront Land",slug:"damoon-beachfront-land",type:"زمین",tx:"buy",location:"دامون",price:29000000000,priceLabel:"۲۹٬۰۰۰٬۰۰۰٬۰۰۰ تومان",area:600,bedrooms:0,bathrooms:0,parking:0,floor:0,year:0,featured:false,
+    images:[IMG.land1,IMG.damoon2],
+    desc:"زمین ساحلی در دامون با سند تک‌برگ، مناسب ساخت ویلای اختصاصی.",
+    amenities:["seaview"],agent:1},
+  {id:9,title:"Sadaf Suite Hotel Unit",slug:"sadaf-suite-hotel-unit",type:"هتل / سوئیت",tx:"rent",location:"صدف",price:45000000,priceLabel:"۴۵٬۰۰۰٬۰۰۰ تومان / ماه",area:60,bedrooms:1,bathrooms:1,parking:0,floor:5,year:1401,featured:false,
+    images:[IMG.sadaf1,IMG.interior2],
+    desc:"سوئیت هتلی مبله در صدف، مناسب اقامت کوتاه‌مدت و اجاره گردشگری.",
+    amenities:["elevator","gym","security","balcony"],agent:2},
+];
+
+const AGENTS = [
+  {name:"امیر رضایی",spec:"مشاور املاک مسکونی",langs:"فارسی، انگلیسی",img:IMG.agent1,phone:"+98 912 111 1111"},
+  {name:"نگار احمدی",spec:"مشاور سرمایه‌گذاری",langs:"فارسی، انگلیسی، عربی",img:IMG.agent2,phone:"+98 912 222 2222"},
+  {name:"محمد کریمی",spec:"مشاور املاک تجاری",langs:"فارسی، انگلیسی",img:IMG.agent3,phone:"+98 912 333 3333"},
+];
+
+/* ================= STATE ================= */
+let favorites = new Set(JSON.parse(localStorage.getItem("kish_favorites")||"[]"));
+let compareList = JSON.parse(localStorage.getItem("kish_compare")||"[]");
+let currentView = "grid";
+let galleryIndex = 0;
+let currentGallery = [];
+
+function saveFav(){localStorage.setItem("kish_favorites",JSON.stringify([...favorites]));updateCounts();}
+function saveCmp(){localStorage.setItem("kish_compare",JSON.stringify(compareList));updateCounts();}
+function updateCounts(){
+  document.getElementById("favCount").textContent = favorites.size;
+  document.getElementById("cmpCount").textContent = compareList.length;
+}
+
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>t.classList.remove("show"),2400);
+}
+
+/* ================= CARD RENDER ================= */
+function propertyCard(p){
+  const isFav = favorites.has(p.id);
+  const isCmp = compareList.includes(p.id);
+  return `
+  <article class="pcard" data-id="${p.id}">
+    <div class="imgwrap">
+      <img src="${p.images[0]}" alt="${p.title}" loading="lazy">
+      <button class="favbtn ${isFav?'active':''}" data-fav="${p.id}" aria-label="افزودن به علاقه‌مندی">
+        <svg viewBox="0 0 24 24" fill="${isFav?'currentColor':'none'}" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+      <span class="tag">${p.tx==='buy'?'فروش':'اجاره'}</span>
+      <span class="ptype-tag">${p.type}</span>
+    </div>
+    <div class="body">
+      <div class="loc">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.7 7-12a7 7 0 1 0-14 0c0 5.3 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        منطقه ${p.location}
+      </div>
+      <h3>${p.title}</h3>
+      <div class="meta">
+        <span>${toFa(p.area)} متر</span>
+        ${p.bedrooms?`<span>${toFa(p.bedrooms)} خواب</span>`:''}
+        ${p.bathrooms?`<span>${toFa(p.bathrooms)} حمام</span>`:''}
+      </div>
+      <div class="foot">
+        <div class="price">${p.priceLabel}<b>قیمت</b></div>
+        <div class="actions">
+          <label class="cmp-check"><input type="checkbox" data-cmp="${p.id}" ${isCmp?'checked':''}> مقایسه</label>
+          <button class="smallbtn" data-view-prop="${p.id}">مشاهده</button>
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function toFa(n){
+  return String(n).replace(/[0-9]/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+}
+function faPrice(n){ return toFa(n.toLocaleString("en-US")) + " تومان"; }
+
+/* ================= FILTER STATE ================= */
+function populateFilterOptions(){
+  const types = [...new Set(PROPERTIES.map(p=>p.type))];
+  const locs = [...new Set(PROPERTIES.map(p=>p.location))];
+  const fType = document.getElementById("f-type");
+  types.forEach(t=>fType.insertAdjacentHTML("beforeend",`<option value="${t}">${t}</option>`));
+  const fLoc = document.getElementById("f-loc");
+  locs.forEach(l=>fLoc.insertAdjacentHTML("beforeend",`<option value="${l}">منطقه ${l}</option>`));
+}
+
+function getFilters(){
+  return {
+    type: document.getElementById("f-type").value,
+    tx: document.getElementById("f-tx").value,
+    loc: document.getElementById("f-loc").value,
+    bed: document.getElementById("f-bed").value,
+    sort: document.getElementById("f-sort").value,
+  };
+}
+
+function renderGrid(){
+  const f = getFilters();
+  let list = PROPERTIES.filter(p=>{
+    if(f.type && p.type!==f.type) return false;
+    if(f.tx && p.tx!==f.tx) return false;
+    if(f.loc && p.location!==f.loc) return false;
+    if(f.bed){
+      const b = parseInt(f.bed);
+      if(b===4){ if(p.bedrooms<4) return false; } else if(p.bedrooms!==b) return false;
+    }
+    return true;
+  });
+  if(f.sort==="price-asc") list.sort((a,b)=>a.price-b.price);
+  else if(f.sort==="price-desc") list.sort((a,b)=>b.price-a.price);
+  else if(f.sort==="area-desc") list.sort((a,b)=>b.area-a.area);
+  else list.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0));
+
+  const grid = document.getElementById("propertyGrid");
+  const noRes = document.getElementById("noResults");
+  if(list.length===0){
+    grid.innerHTML=""; noRes.style.display="block";
+  }else{
+    noRes.style.display="none";
+    grid.innerHTML = list.map(propertyCard).join("");
+  }
+  attachCardEvents();
+}
+
+function attachCardEvents(){
+  document.querySelectorAll("[data-fav]").forEach(btn=>{
+    btn.onclick = (e)=>{
+      e.stopPropagation();
+      const id = parseInt(btn.dataset.fav);
+      if(favorites.has(id)){favorites.delete(id); toast("از علاقه‌مندی‌ها حذف شد");}
+      else {favorites.add(id); toast("به علاقه‌مندی‌ها اضافه شد");}
+      saveFav();
+      btn.classList.toggle("active");
+      btn.querySelector("svg").setAttribute("fill", favorites.has(id)?"currentColor":"none");
+      renderFavDrawer();
+    };
+  });
+  document.querySelectorAll("[data-cmp]").forEach(chk=>{
+    chk.onchange = ()=>{
+      const id = parseInt(chk.dataset.cmp);
+      if(chk.checked){
+        if(compareList.length>=3){ toast("حداکثر ۳ ملک برای مقایسه"); chk.checked=false; return; }
+        compareList.push(id);
+      } else {
+        compareList = compareList.filter(x=>x!==id);
+      }
+      saveCmp();
+      renderCmpDrawer();
+    };
+  });
+  document.querySelectorAll("[data-view-prop]").forEach(btn=>{
+    btn.onclick = ()=> openDetail(parseInt(btn.dataset.viewProp));
+  });
+}
+
+/* ================= LOCATIONS / AGENTS ================= */
+function renderLocations(){
+  document.getElementById("locGrid").innerHTML = LOCATIONS.map(l=>`
+    <div class="loc-card" data-loc="${l.name}">
+      <img src="${l.img}" alt="منطقه ${l.name} کیش" loading="lazy">
+      <div class="loc-info">
+        <h4>${l.name}</h4>
+        <p>${l.desc}</p>
+        <a href="#properties" data-view-loc="${l.name}">مشاهده املاک این منطقه ←</a>
+      </div>
+    </div>`).join("");
+  document.querySelectorAll("[data-view-loc]").forEach(a=>{
+    a.onclick = (e)=>{
+      e.preventDefault();
+      document.getElementById("f-loc").value = a.dataset.viewLoc;
+      renderGrid();
+      document.getElementById("properties").scrollIntoView({behavior:"smooth"});
+    };
+  });
+}
+
+function renderAgents(){
+  document.getElementById("agentGrid").innerHTML = AGENTS.map(a=>`
+    <div class="agent-card">
+      <div class="agent-photo"><img src="${a.img}" alt="${a.name}" loading="lazy"></div>
+      <h4>${a.name}</h4>
+      <div class="spec">${a.spec}</div>
+      <div class="langs">زبان‌ها: ${a.langs}</div>
+      <div class="agent-actions">
+        <a href="tel:${a.phone.replace(/\\s/g,'')}" aria-label="تماس"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.1z"/></svg></a>
+        <a href="#" aria-label="واتساپ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4A8.4 8.4 0 0 1 3.6 12 8.4 8.4 0 0 1 12 3.6 8.4 8.4 0 0 1 21 11.5z"/></svg></a>
+        <a href="#" aria-label="اینستاگرام"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+      </div>
+    </div>`).join("");
+}
+
+/* ================= MAP ================= */
+function renderMap(){
+  const pins = [
+    {x:120,y:90,name:"مرجان"},{x:230,y:150,name:"دامون"},{x:340,y:100,name:"صدف"},
+    {x:420,y:210,name:"نوبنیاد"},{x:180,y:230,name:"صفین"},
+  ];
+  let svg = `<svg class="map-svg" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 200 Q 120 60 280 70 Q 460 80 520 190 Q 480 280 300 290 Q 100 300 40 200 Z" fill="#0f1c33" stroke="#22335a" stroke-width="1.5"/>`;
+  pins.forEach((pin,i)=>{
+    svg += `<g class="map-pin" data-pin="${i}" transform="translate(${pin.x},${pin.y})" tabindex="0" role="button" aria-label="منطقه ${pin.name}">
+      <circle class="pulse" r="8" fill="#5fa8ff"/>
+      <circle r="6" fill="#5fa8ff" stroke="#04101f" stroke-width="2"/>
+      <text x="0" y="-14" text-anchor="middle" fill="#e8ecf4" font-size="12" font-family="Vazirmatn">${pin.name}</text>
+    </g>`;
+  });
+  svg += `</svg><div class="map-popover" id="mapPop"></div>`;
+  document.getElementById("mapWrap").innerHTML = svg;
+
+  document.querySelectorAll("[data-pin]").forEach((pinEl,i)=>{
+    const activate = ()=>{
+      document.querySelectorAll(".map-pin").forEach(p=>p.classList.remove("active"));
+      pinEl.classList.add("active");
+      const loc = pins[i];
+      const pop = document.getElementById("mapPop");
+      const count = PROPERTIES.filter(p=>p.location===loc.name).length;
+      pop.innerHTML = `<h5>منطقه ${loc.name}</h5><p>${toFa(count)} ملک ثبت‌شده در این نسخه دمو</p><button class="smallbtn" id="popGo">مشاهده املاک</button>`;
+      const wrapRect = document.getElementById("mapWrap").getBoundingClientRect();
+      const svgEl = document.querySelector(".map-svg");
+      const pt = svgEl.createSVGPoint(); pt.x=loc.x; pt.y=loc.y;
+      const screenCTM = svgEl.getScreenCTM();
+      const transformed = pt.matrixTransform(screenCTM);
+      const relLeft = transformed.x - wrapRect.left;
+      const relTop = transformed.y - wrapRect.top;
+      pop.style.left = Math.min(relLeft+16, wrapRect.width-236)+"px";
+      pop.style.top = Math.max(relTop-70,10)+"px";
+      pop.classList.add("show");
+      document.getElementById("popGo").onclick = ()=>{
+        document.getElementById("f-loc").value = loc.name;
+        renderGrid();
+        document.getElementById("properties").scrollIntoView({behavior:"smooth"});
+      };
+    };
+    pinEl.addEventListener("click",activate);
+    pinEl.addEventListener("keypress",(e)=>{ if(e.key==="Enter") activate(); });
+  });
+}
+
+/* ================= DETAIL MODAL ================= */
+function openDetail(id){
+  const p = PROPERTIES.find(x=>x.id===id);
+  if(!p) return;
+  currentGallery = p.images;
+  galleryIndex = 0;
+  const agent = AGENTS[p.agent];
+  const similar = PROPERTIES.filter(x=>x.id!==p.id && (x.location===p.location || x.type===p.type)).slice(0,3);
+
+  const stats = [
+    {v:p.area,u:"متر",l:"متراژ"},
+    {v:p.bedrooms,u:"",l:"خواب"},
+    {v:p.bathrooms,u:"",l:"حمام"},
+    {v:p.parking,u:"",l:"پارکینگ"},
+    {v:p.floor,u:"",l:"طبقه"},
+    {v:p.year||"—",u:"",l:"سال ساخت"},
+  ];
+
+  document.getElementById("modalBox").innerHTML = `
+    <button class="modal-close" id="closeModal" aria-label="بستن"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="gallery">
+      <img id="galleryImg" src="${p.images[0]}" alt="${p.title}">
+      <button class="gallery-nav prev" id="galPrev" aria-label="تصویر قبلی"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="gallery-nav next" id="galNext" aria-label="تصویر بعدی"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+      <span class="gallery-counter" id="galCounter">۱ / ${toFa(p.images.length)}</span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-head">
+        <div>
+          <h2>${p.title}</h2>
+          <div class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.7 7-12a7 7 0 1 0-14 0c0 5.3 7 12 7 12z"/></svg> منطقه ${p.location} · ${p.type}</div>
+        </div>
+        <div class="price">${p.priceLabel}</div>
+      </div>
+      <div class="stat-grid">
+        ${stats.map(s=>`<div class="stat-item"><b>${toFa(s.v)}${s.u}</b><span>${s.l}</span></div>`).join("")}
+      </div>
+      <h3 class="sub">توضیحات</h3>
+      <p class="desc">${p.desc}</p>
+      <h3 class="sub">امکانات</h3>
+      <div class="amenity-grid">
+        ${p.amenities.map(a=>`<div class="amenity"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> ${AMEN_LABELS[a]}</div>`).join("")}
+      </div>
+      <h3 class="sub">مشاور مربوطه</h3>
+      <div class="modal-agent">
+        <img src="${agent.img}" alt="${agent.name}">
+        <div class="info"><b>${agent.name}</b><span>${agent.spec}</span></div>
+        <a href="tel:${agent.phone.replace(/\\s/g,'')}" class="smallbtn">تماس</a>
+      </div>
+      <h3 class="sub">اشتراک‌گذاری</h3>
+      <div class="share-row">
+        <button id="shareNative"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 3.9M15.4 6.6L8.6 10.5"/></svg> اشتراک‌گذاری</button>
+        <button id="shareCopy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> کپی لینک</button>
+        <button id="shareWA"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4A8.4 8.4 0 0 1 3.6 12 8.4 8.4 0 0 1 12 3.6 8.4 8.4 0 0 1 21 11.5z"/></svg> واتساپ</button>
+        <button id="shareTG"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> تلگرام</button>
+      </div>
+      ${similar.length?`<h3 class="sub">املاک مشابه</h3><div class="grid" style="grid-template-columns:repeat(${similar.length},1fr);gap:14px;">${similar.map(s=>propertyCardMini(s)).join("")}</div>`:""}
+      <a href="#contact" class="cta" id="modalContactCta" style="width:100%;justify-content:center;margin-top:30px;">درخواست بازدید یا مشاوره</a>
+    </div>
+  `;
+
+  document.getElementById("closeModal").onclick = closeDetail;
+  document.getElementById("galPrev").onclick = ()=>changeGallery(1);
+  document.getElementById("galNext").onclick = ()=>changeGallery(-1);
+  document.getElementById("shareNative").onclick = ()=>doShare(p);
+  document.getElementById("shareCopy").onclick = ()=>{ navigator.clipboard?.writeText(location.href.split('#')[0]+'#property-'+p.id); toast("لینک کپی شد"); };
+  document.getElementById("shareWA").onclick = ()=>window.open("https://wa.me/?text="+encodeURIComponent(p.title),"_blank");
+  document.getElementById("shareTG").onclick = ()=>window.open("https://t.me/share/url?url="+encodeURIComponent(location.href)+"&text="+encodeURIComponent(p.title),"_blank");
+  document.getElementById("modalContactCta").onclick = closeDetail;
+  document.querySelectorAll("[data-similar]").forEach(el=>{
+    el.onclick = ()=> openDetail(parseInt(el.dataset.similar));
+  });
+
+  document.getElementById("detailModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function propertyCardMini(p){
+  return `<div class="pcard" data-similar="${p.id}" style="cursor:pointer;">
+    <div class="imgwrap" style="height:130px;"><img src="${p.images[0]}" alt="${p.title}" loading="lazy"><span class="ptype-tag" style="font-size:10.5px;padding:4px 9px;">${p.type}</span></div>
+    <div class="body" style="padding:14px;"><h3 style="font-size:13.5px;margin-bottom:6px;">${p.title}</h3><div class="price" style="font-size:12px;">${p.priceLabel}</div></div>
+  </div>`;
+}
+function changeGallery(dir){
+  galleryIndex = (galleryIndex + (dir>0?-1:1) + currentGallery.length) % currentGallery.length;
+  document.getElementById("galleryImg").src = currentGallery[galleryIndex];
+  document.getElementById("galCounter").textContent = toFa(galleryIndex+1)+" / "+toFa(currentGallery.length);
+}
+function doShare(p){
+  if(navigator.share){ navigator.share({title:p.title,text:p.title+" - Kish Estate",url:location.href}).catch(()=>{}); }
+  else { navigator.clipboard?.writeText(location.href); toast("لینک کپی شد"); }
+}
+function closeDetail(){
+  document.getElementById("detailModal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.getElementById("detailModal").addEventListener("click",(e)=>{
+  if(e.target.id==="detailModal") closeDetail();
+});
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape"){ closeDetail(); closeFavDrawer(); closeCmpDrawer(); }
+  if(document.getElementById("detailModal").classList.contains("open")){
+    if(e.key==="ArrowLeft") changeGallery(-1);
+    if(e.key==="ArrowRight") changeGallery(1);
+  }
+});
+
+/* ================= FAVORITES DRAWER ================= */
+function renderFavDrawer(){
+  const list = PROPERTIES.filter(p=>favorites.has(p.id));
+  const el = document.getElementById("favList");
+  if(!list.length){ el.innerHTML = `<div class="empty-state">هنوز ملکی را به علاقه‌مندی‌ها اضافه نکرده‌اید.</div>`; return; }
+  el.innerHTML = list.map(p=>`
+    <div class="mini-card">
+      <img src="${p.images[0]}" alt="${p.title}">
+      <div class="info"><h5>${p.title}</h5><div class="price">${p.priceLabel}</div></div>
+      <button class="rm" data-unfav="${p.id}" aria-label="حذف"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>`).join("");
+  document.querySelectorAll("[data-unfav]").forEach(btn=>{
+    btn.onclick = ()=>{ favorites.delete(parseInt(btn.dataset.unfav)); saveFav(); renderFavDrawer(); renderGrid(); };
+  });
+}
+function openFavDrawer(){ document.getElementById("favOverlay").classList.add("open"); document.getElementById("favDrawer").classList.add("open"); renderFavDrawer(); }
+function closeFavDrawer(){ document.getElementById("favOverlay").classList.remove("open"); document.getElementById("favDrawer").classList.remove("open"); }
+
+/* ================= COMPARE DRAWER ================= */
+function renderCmpDrawer(){
+  const list = PROPERTIES.filter(p=>compareList.includes(p.id));
+  const el = document.getElementById("cmpList");
+  if(!list.length){ el.innerHTML = `<div class="empty-state">ملکی برای مقایسه انتخاب نشده. از کارت ملک، گزینه «مقایسه» را بزنید.</div>`; return; }
+  const rows = [
+    {l:"قیمت", f:p=>p.priceLabel},
+    {l:"متراژ", f:p=>toFa(p.area)+" متر"},
+    {l:"خواب", f:p=>toFa(p.bedrooms)},
+    {l:"حمام", f:p=>toFa(p.bathrooms)},
+    {l:"نوع ملک", f:p=>p.type},
+    {l:"منطقه", f:p=>p.location},
+    {l:"امکانات", f:p=>p.amenities.map(a=>AMEN_LABELS[a]).join("، ")||"—"},
+  ];
+  let html = list.map(p=>`<div class="mini-card"><img src="${p.images[0]}" alt="${p.title}"><div class="info"><h5>${p.title}</h5></div><button class="rm" data-uncmp="${p.id}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>`).join("");
+  html += `<table class="cmp-table"><tbody>`;
+  rows.forEach(r=>{
+    html += `<tr><th>${r.l}</th>${list.map(p=>`<td>${r.f(p)}</td>`).join("")}</tr>`;
+  });
+  html += `</tbody></table>`;
+  el.innerHTML = html;
+  document.querySelectorAll("[data-uncmp]").forEach(btn=>{
+    btn.onclick = ()=>{ compareList = compareList.filter(id=>id!==parseInt(btn.dataset.uncmp)); saveCmp(); renderCmpDrawer(); renderGrid(); };
+  });
+}
+function openCmpDrawer(){ document.getElementById("cmpOverlay").classList.add("open"); document.getElementById("cmpDrawer").classList.add("open"); renderCmpDrawer(); }
+function closeCmpDrawer(){ document.getElementById("cmpOverlay").classList.remove("open"); document.getElementById("cmpDrawer").classList.remove("open"); }
+
+/* ================= CONTACT FORM ================= */
+document.getElementById("contactForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  let valid = true;
+  const name = document.getElementById("c-name");
+  const phone = document.getElementById("c-phone");
+  const type = document.getElementById("c-type");
+  const msg = document.getElementById("c-msg");
+
+  function setErr(inputEl, groupId, cond){
+    const g = document.getElementById(groupId);
+    if(cond){ g.classList.add("err"); valid=false; } else { g.classList.remove("err"); }
+  }
+  setErr(name,"g-name", name.value.trim().length<2);
+  setErr(phone,"g-phone", !/^0?9\\d{9}$/.test(phone.value.trim().replace(/\\s/g,'')));
+  setErr(type,"g-type", type.value==="");
+  setErr(msg,"g-msg", msg.value.trim().length<5);
+
+  if(!valid) return;
+  document.getElementById("contactForm").classList.add("hide");
+  document.getElementById("successBox").classList.add("show");
+});
+
+/* ================= NAV / SCROLL ================= */
+const header = document.getElementById("siteHeader");
+window.addEventListener("scroll",()=>{
+  header.classList.toggle("scrolled", window.scrollY>40);
+  document.getElementById("scrollTopBtn").classList.toggle("show", window.scrollY>600);
+  document.querySelectorAll(".reveal").forEach(el=>{
+    const r = el.getBoundingClientRect();
+    if(r.top < window.innerHeight*0.88) el.classList.add("in");
+  });
+},{passive:true});
+document.getElementById("scrollTopBtn").onclick = ()=>window.scrollTo({top:0,behavior:"smooth"});
+
+document.querySelectorAll(".nav-link").forEach(a=>{
+  a.addEventListener("click",()=>{
+    if(a.dataset.filter){
+      document.getElementById("f-tx").value = a.dataset.filter;
+      renderGrid();
+    }
+  });
+});
+
+/* mobile drawer */
+const mobileDrawer = document.getElementById("mobileDrawer");
+document.getElementById("hamburgerBtn").onclick = ()=>mobileDrawer.classList.add("open");
+document.getElementById("closeDrawerBtn").onclick = ()=>mobileDrawer.classList.remove("open");
+document.querySelectorAll(".mnav, #mDrawerCta").forEach(a=>a.addEventListener("click",()=>mobileDrawer.classList.remove("open")));
+
+/* fav/compare drawers */
+document.getElementById("openFav").onclick = openFavDrawer;
+document.getElementById("closeFav").onclick = closeFavDrawer;
+document.getElementById("favOverlay").onclick = closeFavDrawer;
+document.getElementById("openCompare").onclick = openCmpDrawer;
+document.getElementById("closeCmp").onclick = closeCmpDrawer;
+document.getElementById("cmpOverlay").onclick = closeCmpDrawer;
+
+/* search tabs */
+document.querySelectorAll(".search-tabs button").forEach(btn=>{
+  btn.onclick = ()=>{
+    document.querySelectorAll(".search-tabs button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+  };
+});
+document.getElementById("heroSearchBtn").onclick = ()=>{
+  const region = document.getElementById("s-region").value;
+  const type = document.getElementById("s-type").value;
+  const activeTab = document.querySelector(".search-tabs button.active").dataset.tx;
+  if(region) document.getElementById("f-loc").value = region;
+  if(type) document.getElementById("f-type").value = type;
+  if(activeTab==="buy") document.getElementById("f-tx").value="buy";
+  else if(activeTab==="rent") document.getElementById("f-tx").value="rent";
+  else document.getElementById("f-tx").value="";
+  renderGrid();
+  document.getElementById("properties").scrollIntoView({behavior:"smooth"});
+};
+
+/* filters */
+["f-type","f-tx","f-loc","f-bed","f-sort"].forEach(id=>{
+  document.getElementById(id).addEventListener("change",renderGrid);
+});
+document.getElementById("viewGrid").onclick = ()=>{
+  document.getElementById("viewGrid").classList.add("active");
+  document.getElementById("viewList").classList.remove("active");
+  document.getElementById("propertyGrid").classList.remove("list-mode");
+};
+document.getElementById("viewList").onclick = ()=>{
+  document.getElementById("viewList").classList.add("active");
+  document.getElementById("viewGrid").classList.remove("active");
+  document.getElementById("propertyGrid").classList.add("list-mode");
+};
+
+/* active nav link on scroll */
+const sections = ["home","properties","locations","investment","about","agents","contact"];
+window.addEventListener("scroll",()=>{
+  let current = "home";
+  sections.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el && window.scrollY+140 >= el.offsetTop) current = id;
+  });
+  document.querySelectorAll(".navlinks a[data-view]").forEach(a=>{
+    a.classList.toggle("active", a.dataset.view===current || (current==="properties" && a.dataset.view==="properties" && !a.dataset.filter));
+  });
+},{passive:true});
+
+/* ================= INIT ================= */
+populateFilterOptions();
+renderGrid();
+renderLocations();
+renderAgents();
+renderMap();
+updateCounts();
+setTimeout(()=>{ document.querySelectorAll(".reveal").forEach(el=>{
+  const r = el.getBoundingClientRect();
+  if(r.top < window.innerHeight*0.88) el.classList.add("in");
+});},100);
+</script>
+</body>
+</html>
